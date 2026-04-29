@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>恋愛・婚活総合診断</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <header class="header">
+            <h1>🧠 恋愛・婚活総合診断</h1>
+            <p class="subtitle">50問の質問であなたの恋愛タイプを診断</p>
+        </header>
+
+        <!-- メイン -->
+        <main class="main-content">
+            
+            <!-- ページ1: スタート画面 -->
+            <section id="page-1" class="page active">
+                <div class="start-content">
+                    <h2>恋愛診断へようこそ</h2>
+                    <p>このサイトは、あなたの恋愛スタイルを診断します。</p>
+                    <ul class="feature-list">
+                        <li>✅ 50問の質問に回答</li>
+                        <li>✅ あなたの恋愛タイプを判定</li>
+                        <li>✅ 強み・弱み・改善アドバイスを表示</li>
+                        <li>✅ 相性の良いタイプを診断</li>
+                    </ul>
+                    <div class="button-group">
+                        <button id="start-btn" class="btn btn-primary">診断を開始</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ページ2: Q1-Q10 -->
+            <section id="page-2" class="page">
+                <div class="quiz-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 20%;"></div>
+                    </div>
+                    <p class="progress-text">Q1〜Q10 / 50問</p>
+                    <h3 class="page-title">スペック・コミュニケーション能力</h3>
+                    <div id="questions-page-2" class="questions-list"></div>
+                    <div class="button-group">
+                        <button class="btn btn-secondary page-prev">← 戻る</button>
+                        <button class="btn btn-primary page-next">次へ →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ページ3: Q11-Q20 -->
+            <section id="page-3" class="page">
+                <div class="quiz-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 40%;"></div>
+                    </div>
+                    <p class="progress-text">Q11〜Q20 / 50問</p>
+                    <h3 class="page-title">性格・価値観・生活力</h3>
+                    <div id="questions-page-3" class="questions-list"></div>
+                    <div class="button-group">
+                        <button class="btn btn-secondary page-prev">← 戻る</button>
+                        <button class="btn btn-primary page-next">次へ →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ページ4: Q21-Q30 -->
+            <section id="page-4" class="page">
+                <div class="quiz-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%;"></div>
+                    </div>
+                    <p class="progress-text">Q21〜Q30 / 50問</p>
+                    <h3 class="page-title">生活力・見た目・価値観</h3>
+                    <div id="questions-page-4" class="questions-list"></div>
+                    <div class="button-group">
+                        <button class="btn btn-secondary page-prev">← 戻る</button>
+                        <button class="btn btn-primary page-next">次へ →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ページ5: Q31-Q40 -->
+            <section id="page-5" class="page">
+                <div class="quiz-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%;"></div>
+                    </div>
+                    <p class="progress-text">Q31〜Q40 / 50問</p>
+                    <h3 class="page-title">恋愛・心理（前半）</h3>
+                    <div id="questions-page-5" class="questions-list"></div>
+                    <div class="button-group">
+                        <button class="btn btn-secondary page-prev">← 戻る</button>
+                        <button class="btn btn-primary page-next">次へ →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ページ6: Q41-Q50 -->
+            <section id="page-6" class="page">
+                <div class="quiz-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
+                    <p class="progress-text">Q41〜Q50 / 50問</p>
+                    <h3 class="page-title">恋愛・心理（後半）</h3>
+                    <div id="questions-page-6" class="questions-list"></div>
+                    <div class="button-group">
+                        <button class="btn btn-secondary page-prev">← 戻る</button>
+                        <button class="btn btn-primary page-next">診断結果を見る →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ページ7: 結果画面 -->
+            <section id="page-7" class="page">
+                <div class="result-container">
+                    
+                    <!-- 総合ランク + タイプ -->
+                    <div class="result-header">
+                        <h2>診断結果</h2>
+                        <div class="rank-badge">
+                            <span class="rank" id="result-rank">A</span>
+                        </div>
+                        <p class="type-display" id="result-type">自立型</p>
+                    </div>
+
+                    <!-- 一言まとめ -->
+                    <div class="result-section">
+                        <h3>■ 一言まとめ</h3>
+                        <p id="result-summary" class="summary-text"></p>
+                    </div>
+
+                    <!-- 特徴 -->
+                    <div class="result-section">
+                        <h3>■ 特徴</h3>
+                        <ul id="result-features" class="result-list"></ul>
+                    </div>
+
+                    <!-- 強み -->
+                    <div class="result-section">
+                        <h3>■ 強み</h3>
+                        <ul id="result-strengths" class="result-list"></ul>
+                    </div>
+
+                    <!-- 弱み -->
+                    <div class="result-section">
+                        <h3>■ 弱み</h3>
+                        <ul id="result-weaknesses" class="result-list"></ul>
+                    </div>
+
+                    <!-- 改善アドバイス -->
+                    <div class="result-section">
+                        <h3>■ 改善の伸びしろ</h3>
+                        <div id="result-advice" class="advice-list"></div>
+                    </div>
+
+                    <!-- 相性 -->
+                    <div class="result-section">
+                        <h3>■ 相性が良いタイプ</h3>
+                        <ul id="result-good-match" class="result-list"></ul>
+                    </div>
+
+                    <div class="result-section">
+                        <h3>■ 相性が悪いタイプ</h3>
+                        <ul id="result-bad-match" class="result-list"></ul>
+                    </div>
+
+                    <!-- アクション -->
+                    <div class="result-actions">
+                        <button id="share-btn" class="btn btn-secondary">📱 結果をコピー</button>
+                        <button id="restart-btn" class="btn btn-primary">🔄 もう一度診断する</button>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/questions.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/diagnosis.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
